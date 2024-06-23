@@ -44,7 +44,7 @@ self.model = 'gpt-4o-2024-05-13'  # 部署的模型版本名称
 self.api_key = 'YOUR_API_KEY'
 self.api_url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
 ```
-2. 修改`qqbot/plugins/chatgpt_plugin/chatgpt_plugin.py`文件第32-33行代码，选择你要使用 Azure OpenAI （`get_chatgpt_response(question)`）还是 Google Gemini （`get_gemini_response`），将不用一行的注释。
+2. 修改`qqbot/plugins/chatgpt_plugin/chatgpt_plugin.py`文件第32-33行代码，选择你要使用 Azure OpenAI （`get_chatgpt_response(question)`）还是 Google Gemini （`get_gemini_response`），将不用的那一行的注释。
 ```python
 #answer = await self.get_chatgpt_response(question)
 answer = await self.get_gemini_response(question)
@@ -55,7 +55,7 @@ answer = await self.get_gemini_response(question)
 self.group_id = 723609186  # 替换为要发送每日消息的 QQ 群号
 ```
 #### 复读机插件
-修改`qqbot/plugins/daily_message_plugin/daily_message_plugin.py`文件第6行代码。
+修改`qqbot/plugins/repeater_plugin/repeater_plugin.py`文件第6行代码。
 ```python
 self.target_qqs = ['252737224', '601904795', '136208872', '1318242449']  # 要复读消息的QQ号列表
 ```
