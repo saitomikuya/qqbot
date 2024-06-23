@@ -14,6 +14,8 @@ qqbot/
 │   └── ...
 ```
 ### 配置环境
+1. 安装LLOneBot，它是LiteLoaderQQNT插件，使你的NTQQ支持OneBot11协议进行QQ机器人开发：https://github.com/LLOneBot/LLOneBot
+2. 安装依赖库。
 ```bash
 pip install -r requirements.txt
 ```
@@ -61,4 +63,5 @@ self.target_qqs = ['252737224', '601904795', '136208872', '1318242449']  # 要�
 ```
 ### 启动QQ机器人
 完成所有配置后，双击`qqbot/qqbot.py`，即可启动机器人。
+
 如果加载了`test_plugin`插件，尝试在群内发送“test”，机器人发送“OK”即表示QQ机器人已经正常运行了。
