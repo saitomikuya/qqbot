@@ -8,11 +8,12 @@ class DNSPlugin:
     async def handle_message(self, data):
         message_content = data['raw_message']
         group_id = data['group_id']
+        message_id = data['message_id']
         
         if message_content.startswith('dns '):
             domain = message_content.split(' ', 1)[1]
             response = await self.query_dns(domain)
-            await self.bot.send_group_message(group_id, response)
+            await self.bot.send_group_message(group_id, f"[CQ:reply,id={message_id}] {response}")
 
     async def query_dns(self, domain):
         records = {
