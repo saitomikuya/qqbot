@@ -1,2 +1,5 @@
 websockets
 aiohttp
+
+# dns_plugin dependencies
+dnspython
