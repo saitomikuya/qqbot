@@ -31,7 +31,7 @@ class IPInfoPlugin:
             ip_info = await self.get_ip_info(ip)
             if ip_info:
                 response_message = (
-                    f"[CQ:reply,id={message_id}]【{query} IP查询】\n"
+                    f"[CQ:reply,id={message_id}] 【{query} IP查询】\n"
                     f"IP地址：{ip_info.get('IP', '未知')}\n"
                     f"ISP信息：{ip_info.get('ISP', '未知')}\n"
                     f"位置信息：{ip_info.get('Location', '未知')}"
