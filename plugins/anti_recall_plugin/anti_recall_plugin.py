@@ -51,8 +51,11 @@ class AntiRecallPlugin:
                 user_id = recalled_message['user_id']
                 operator_info = await self.bot.get_group_member_info(group_id, operator_id)
                 recalled_user_info = await self.bot.get_group_member_info(group_id, user_id)
-                operator_nickname = operator_info['nickname'] if operator_info else operator_id
-                recalled_user_nickname = recalled_user_info['nickname'] if recalled_user_info else user_id
+
+                # 使用群昵称，如果群昵称为空则使用QQ昵称
+                operator_nickname = operator_info['card'] if operator_info and operator_info['card'] else operator_info['nickname'] if operator_info else operator_id
+                recalled_user_nickname = recalled_user_info['card'] if recalled_user_info and recalled_user_info['card'] else recalled_user_info['nickname'] if recalled_user_info else user_id
+
                 message_content = recalled_message['message_content']
                 # 去掉私聊不支持的格式的内容
                 message_content = re.sub(r'\[CQ:reply,id=[^\]]+\]', '', message_content)
